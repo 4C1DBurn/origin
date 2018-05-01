@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: m4k5
- * Date: 21.04.2018
- * Time: 17:20
- */
+<h2>{{ $title }}</h2>
+<ol class="breadcrumb">
+    <li><a href="{{ route('admin.index') }}">{{ $parent }}</a></li>
+    <li class="active">{{ $active }}</li>
+</ol>

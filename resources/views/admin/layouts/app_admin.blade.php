@@ -10,7 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
+    <!-- Script-->
+    <script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -19,6 +20,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
 <div id="app">
@@ -32,15 +38,26 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a href="{{route('admin.index')}}" role="button" aria-expanded="false">Status Bar</a>
+                    </li>
+                </ul>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Categories</a>
-                            <li><a href="#">Articles</a>
+                            <li><a href="{{ route('admin.category.index') }}">Categories</a>
+                            <li><a href="{{ route('admin.article.index') }}">Articles</a>
                         </ul>
                     </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Users Managment</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ route('admin.user_managment.user.index') }}">Users</a>
+                    </ul>
+                </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
